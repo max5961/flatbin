@@ -7,4 +7,4 @@ while IFS= read -r proxy_file; do
         echo "Removing ${proxy_file}"
         sudo rm "${proxy_file}"
     fi
-done < ./created_proxies.txt
+done < "${PROXIES}"
