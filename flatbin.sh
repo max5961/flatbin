@@ -44,9 +44,9 @@ while IFS= read -r line; do
 
     create_bin
     append 'if [[ "${1}" == "--version" || "${1}" == "-v" ]]; then'
-    append "\t # prefix version results with flatpak since flatpak versions may vary between sources"
-    append "\t flatpak info ${app_id} | grep Version | awk '{print \"flatpak\", \$2}'"
-    append "\t exit 0"
+    append "\t# prefix version results with flatpak since flatpak versions may vary between sources"
+    append "\tflatpak info ${app_id} | grep Version | awk '{print \"flatpak\", \$2}'"
+    append "\texit 0"
     append "fi"
     append "flatpak run ${app_id} \"\${@}\""
     append "\n${SYMBOL}"
