@@ -10,7 +10,7 @@ while IFS= read -r proxy_file; do
     # if the flags are telling the script to remove everything, then remove everything
     # regardless
 
-    if grep -E "^${SYMBOL}\$" "${proxy_file}" >/dev/null 2>&1; then
+    if grep -E "^${FILE_STAMP}\$" "${proxy_file}" >/dev/null 2>&1; then
         echo "Removing ${proxy_file}"
         sudo rm "${proxy_file}"
         ((++removed_count))
